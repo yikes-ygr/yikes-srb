@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+   
+    <parent>
+        <artifactId>yikes-common</artifactId>
+        <groupId>com.yikes</groupId>
+        <version>${revision}</version>
+    </parent>
+    
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>common-web</artifactId>
+    <packaging>jar</packaging>
+    
+    <name>${project.artifactId}</name>
+    <description>Web 框架，全局异常、API 日志等</description>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.yikes</groupId>
+            <artifactId>common-core</artifactId>
+            <version>1.0.0-version</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.yikes</groupId>
+            <artifactId>common-mybatis</artifactId>
+            <version>1.0.0-version</version>
+        </dependency>
+
+        <!-- Spring Boot 配置所需依赖 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-configuration-processor</artifactId>
+        </dependency>
+        
+        <!-- Web 相关 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-validation</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-core</artifactId>
+            <scope>provided</scope> <!-- 设置为 provided，主要是 GlobalExceptionHandler 使用 -->
+        </dependency>
+
+        <dependency>
+            <groupId>com.github.xiaoymin</groupId>
+            <artifactId>knife4j-openapi2-spring-boot-starter</artifactId>
+        </dependency>
+        
+        <dependency>
+            <groupId>org.springdoc</groupId>  <!-- 接口文档 -->
+            <artifactId>springdoc-openapi-ui</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.redisson</groupId>
+            <artifactId>redisson-spring-boot-starter</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>io.github.openfeign</groupId>
+            <artifactId>feign-httpclient</artifactId>
+        </dependency>
+        
+    </dependencies>
+    
+</project>
