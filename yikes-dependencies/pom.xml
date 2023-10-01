@@ -2,19 +2,19 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    
+
     <groupId>com.yikes</groupId>
     <artifactId>yikes-dependencies</artifactId>
     <version>${revision}</version>
     <packaging>pom</packaging>
-    
+
     <name>${project.artifactId}</name>
     <description>基础 bom 文件，管理整个项目的依赖版本</description>
-    
+
     <properties>
         <revision>1.0.0-version</revision>
         <flatten-maven-plugin.version>1.5.0</flatten-maven-plugin.version>
-        
+
         <!-- 统一依赖管理 -->
         <spring-boot.version>2.7.16</spring-boot.version>
         <spring-boot-configuration-processor.version>3.1.2</spring-boot-configuration-processor.version>
@@ -25,7 +25,7 @@
         <servlet.versoin>2.5</servlet.versoin>
         <springdoc.version>1.7.0</springdoc.version>
         <knife4j.version>4.1.0</knife4j.version>
-        
+
         <!-- DB 相关 -->
         <druid.version>1.2.18</druid.version>
         <mysql-connector-java.version>8.0.26</mysql-connector-java.version>
@@ -35,30 +35,30 @@
         <mybatis-plus-join-boot-starter.version>1.4.5</mybatis-plus-join-boot-starter.version>
         <redisson.version>3.18.0</redisson.version>
         <dm8.jdbc.version>8.1.2.141</dm8.jdbc.version>
-        
+
         <!-- RPC 相关 -->
         <!-- Config 配置中心相关 -->
         <apollo.version>1.9.2</apollo.version>
         <!-- Job 定时任务相关 -->
         <xxl-job.version>2.3.1</xxl-job.version>
-        
+
         <!-- 服务保障相关 -->
         <lock4j.version>2.2.3</lock4j.version>
         <resilience4j.version>1.7.1</resilience4j.version>
-        
+
         <!-- 监控相关 -->
         <skywalking.version>8.12.0</skywalking.version>
         <spring-boot-admin.version>2.7.10</spring-boot-admin.version>
         <opentracing.version>0.33.0</opentracing.version>
-        
+
         <!-- Test 测试相关 -->
         <podam.version>7.2.11.RELEASE</podam.version>
         <jedis-mock.version>1.0.7</jedis-mock.version>
         <mockito-inline.version>4.11.0</mockito-inline.version>
-        
+
         <!-- Bpm 工作流相关 -->
         <flowable.version>6.8.0</flowable.version>
-        
+
         <!-- 工具类相关 -->
         <captcha-plus.version>1.0.6</captcha-plus.version>
         <jsoup.version>1.15.4</jsoup.version>
@@ -77,7 +77,7 @@
         <tika-core.version>2.7.0</tika-core.version>
         <ip2region.version>2.7.0</ip2region.version>
         <reflections.version>0.10.2</reflections.version>
-        
+
         <!-- 三方云服务相关 -->
         <okio.version>3.5.0</okio.version>
         <okhttp3.version>4.11.0</okhttp3.version>
@@ -90,7 +90,7 @@
         <jimureport.version>1.5.8</jimureport.version>
         <xercesImpl.version>2.12.2</xercesImpl.version>
         <weixin-java.version>4.5.0</weixin-java.version>
-        
+
     </properties>
 
     <dependencyManagement>
@@ -117,7 +117,7 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
-            
+
             <!-- Spring 核心 -->
             <dependency>
                 <!-- 用于生成自定义的 Spring @ConfigurationProperties 配置类的说明文件 -->
@@ -125,13 +125,13 @@
                 <artifactId>spring-boot-configuration-processor</artifactId>
                 <version>${spring-boot.version}</version>
             </dependency>
-            
+
             <dependency>
                 <groupId>org.springdoc</groupId> <!-- 接口文档 UI：默认 -->
                 <artifactId>springdoc-openapi-ui</artifactId>
                 <version>${springdoc.version}</version>
             </dependency>
-            
+
             <dependency>
                 <groupId>com.github.xiaoymin</groupId>
                 <artifactId>knife4j-openapi2-spring-boot-starter</artifactId>
@@ -154,7 +154,7 @@
                 <artifactId>mysql-connector-java</artifactId>
                 <version>${mysql-connector-java.version}</version>
             </dependency>
-            
+
             <dependency>
                 <groupId>com.baomidou</groupId>
                 <artifactId>mybatis-plus-boot-starter</artifactId>
@@ -175,7 +175,7 @@
                 <artifactId>mybatis-plus-core</artifactId>
                 <version>${mybatis-plus.version}</version>
             </dependency>
-            
+
             <dependency>
                 <groupId>com.baomidou</groupId>
                 <artifactId>dynamic-datasource-spring-boot-starter</artifactId> <!-- 多数据源 -->
@@ -209,7 +209,7 @@
                 <artifactId>xxl-job-core</artifactId>
                 <version>${xxl-job.version}</version>
             </dependency>
-            
+
             <dependency>
                 <groupId>com.baomidou</groupId>
                 <artifactId>lock4j-redisson-spring-boot-starter</artifactId>
@@ -248,16 +248,16 @@
                 <groupId>org.apache.skywalking</groupId>
                 <artifactId>apm-toolkit-opentracing</artifactId>
                 <version>${skywalking.version}</version>
-                <!--                <exclusions>-->
-                <!--                    <exclusion>-->
-                <!--                        <artifactId>opentracing-api</artifactId>-->
-                <!--                        <groupId>io.opentracing</groupId>-->
-                <!--                    </exclusion>-->
-                <!--                    <exclusion>-->
-                <!--                        <artifactId>opentracing-util</artifactId>-->
-                <!--                        <groupId>io.opentracing</groupId>-->
-                <!--                    </exclusion>-->
-                <!--                </exclusions>-->
+                <exclusions>
+                    <exclusion>
+                        <artifactId>opentracing-api</artifactId>
+                        <groupId>io.opentracing</groupId>
+                    </exclusion>
+                    <exclusion>
+                        <artifactId>opentracing-util</artifactId>
+                        <groupId>io.opentracing</groupId>
+                    </exclusion>
+                </exclusions>
             </dependency>
             <dependency>
                 <groupId>io.opentracing</groupId>
@@ -285,7 +285,7 @@
                 <artifactId>spring-boot-admin-starter-client</artifactId> <!-- 实现 Spring Boot Admin Server 服务端 -->
                 <version>${spring-boot-admin.version}</version>
             </dependency>
-            
+
             <dependency>
                 <groupId>org.mockito</groupId>
                 <artifactId>mockito-inline</artifactId>
@@ -523,7 +523,7 @@
                     </exclusion>
                 </exclusions>
             </dependency>
-            
+
             <dependency>
                 <groupId>xerces</groupId>
                 <artifactId>xercesImpl</artifactId>

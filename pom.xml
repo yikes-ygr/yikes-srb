@@ -13,7 +13,6 @@
         <module>yikes-common</module>
         <module>yikes-service</module>
         <module>yikes-gateway</module>
-        <module>yikes-business</module>
     </modules>
     
     <name>yikes-srb</name>

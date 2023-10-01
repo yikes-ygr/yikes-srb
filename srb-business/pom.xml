@@ -9,26 +9,72 @@
         <version>2.7.16</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    
-    <groupId>com.yikes</groupId>
+
     <artifactId>srb-business</artifactId>
     <version>${revision}</version>
-    <name>srb-business</name>
+    
+    <name>${project.artifactId}</name>
     <description>yikes-srb-业务流程核心</description>
+    
     <properties>
         <java.version>1.8</java.version>
     </properties>
+    
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter</artifactId>
         </dependency>
+        
+        <!-- 读取配置 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-configuration-processor</artifactId>
+        </dependency>
 
+        <!-- 单元测试 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+
+        <!-- Spring Cloud & Alibaba -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-bootstrap</artifactId>
+        </dependency>
+
+        <!-- 客户端负载均衡 -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-loadbalancer</artifactId>
+        </dependency>
+
+        <!-- 注册中心 -->
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+        </dependency>
+
+        <!-- 配置中心 -->
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
+        </dependency>
+        
+        <dependency>
+            <groupId>com.yikes</groupId>
+            <artifactId>common-mybatis</artifactId>
+            <version>1.0.0-version</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.yikes</groupId>
+            <artifactId>common-web</artifactId>
+            <version>1.0.0-version</version>
+        </dependency>
+        
     </dependencies>
 
     <build>
